@@ -48,14 +48,19 @@ async function displayData(photographer, medias) {
     const photographerModel = detailPhotographerFactory(photographer)
     const header = photographerModel.getUserHeader()
 
-    //afficher la collection de photo
-    const mediaDisplay = document.querySelector(".media-collection")
+    //afficher la collection de media
+    const mediaContainer = document.querySelector(".media-collection")
     
     medias.forEach((media) => {
         const mediaCollectionModel = mediaFactory(media)
         const mediaDisplayed = mediaCollectionModel.getUserMediaCollection()
-        mediaDisplay.appendChild(mediaDisplayed)
+        mediaContainer.appendChild(mediaDisplayed)
     });
+
+    //afficher le petit encart
+    const encart = document.querySelector('.info-collection')
+    const priceDetail = photographerModel.getAside()
+    encart.appendChild(priceDetail)
 };
 
 async function init(){

@@ -41,5 +41,12 @@ function detailPhotographerFactory(data) {
         photographerSection.appendChild(imgContainer)
     }
 
-    return {name, portrait, country, city, tagline, getUserHeader}
+    function getAside() {
+        const priceDetail = document.createElement("p")
+        priceDetail.textContent = `${price}€/jour`
+
+        return(priceDetail)
+    }
+
+    return {name, portrait, country, city, tagline, price, getUserHeader, getAside}
 }
