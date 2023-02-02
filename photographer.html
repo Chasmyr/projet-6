@@ -8,7 +8,7 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
-    <div id="contact_modal" role="dialog" aria-describedby="contactModal" aria-modal="true">
+    <div id="contact_modal" role="dialog" aria-describedby="contactModal" aria-modal="true" aria-hidden="true">
 			<div class="modal">
 				<header class="modal-header">
           <div class="modal-title">
@@ -39,13 +39,21 @@
 				</form>
 			</div>
 		</div>
-    <div id="lightbox_bg">
+    <div id="lightbox_bg" role="dialog">
       <div class="lightbox" aria-label="image closeup view">
+          <a href="#" class="btn-close-lightbox" aria-label="Close dialog" role="button">
+            <img src="assets/icons/closeSlider.svg" />
+          </a>
           <div class="lightbox-slide">
-
+            <a href="#" class="slider-prev-option" aria-label="Previous image">
+              <img src="assets/icons/prev.svg" />
+            </a>
+            <a href="#" class="slider-next-option" aria-label="Next image">
+              <img src="assets/icons/next.svg" />
+            </a>
           </div>
           <div class="lightbox-info">
-
+              <p class="info-title"></p>
           </div>
       </div>
     </div>

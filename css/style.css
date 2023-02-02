@@ -168,14 +168,6 @@ h1 {
 .media-title {
     margin-top: 10px;
 }
-.info-collection {
-    height: 70px;
-    width: 350px;
-    position: sticky;
-    bottom: 0;
-    left: 80%;
-    background-color: #DB8876;
-}
 .like-container {
     display: flex;
     align-items: center;
@@ -183,10 +175,4 @@ h1 {
 .like-container > a {
     margin-bottom: 13px;
 }
-.bi-heart-fill {
-    color: #901C1C;
-}
-.info-collection {
-    font-size: 22px;
-    text-align: center;
-}
+

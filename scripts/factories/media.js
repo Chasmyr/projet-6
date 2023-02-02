@@ -1,5 +1,5 @@
 function mediaFactory(media) {
-    let {title, image, video, likes} = media
+    let {title, image, video, likes, id} = media
 
     function getUserMediaCollection() {
         const article = document.createElement("article")
@@ -19,6 +19,14 @@ function mediaFactory(media) {
         const likeIcon = document.createElement("i")
         likeIcon.classList.add("bi")
         likeIcon.classList.add("bi-heart-fill")
+        likeIcon.addEventListener('click', (e) => {
+            e.preventDefault()
+            if(!likeIcon.classList.contains('liked')) {
+                likeIcon.classList.add('liked')
+                like.textContent = likes + 1
+                console.log('like !')
+            }
+        })
 
         const likeAction = document.createElement("a")
         likeAction.href="#"
@@ -37,7 +45,8 @@ function mediaFactory(media) {
         const imageLink = document.createElement("a")
         imageLink.href = "#"
         imageLink.ariaLabel = "Lilac breasted roller, closeup view"
-        imageLink.addEventListener('click', () => {
+        imageLink.addEventListener('click', (e) => {
+            e.preventDefault()
             openLightBox(media)
         })
         
@@ -49,6 +58,8 @@ function mediaFactory(media) {
             mediaToDisplay.setAttribute("src", url)
             mediaToDisplay.setAttribute("type", `type/${type}`)
             mediaToDisplay.classList.add("media-collection-item")
+            mediaToDisplay.setAttribute("id", `${id}`)
+            mediaToDisplay.setAttribute("alt", `${title}`)
 
             imageLink.appendChild(mediaToDisplay)
             article.appendChild(imageLink)
@@ -59,6 +70,8 @@ function mediaFactory(media) {
             const mediaToDisplay = document.createElement("img")
             mediaToDisplay.setAttribute("src", url)
             mediaToDisplay.classList.add("media-collection-item")
+            mediaToDisplay.setAttribute("id", `${id}`)
+            mediaToDisplay.setAttribute("alt", `${title}`)
             
             imageLink.appendChild(mediaToDisplay)
             article.appendChild(imageLink)

@@ -50,11 +50,38 @@ function detailPhotographerFactory(data) {
         modalTitle.appendChild(titleReplace)
     }
 
+    //générer l'encart pour le prix et les likes
     function getAside() {
+        //générer les like
+        let totalLikes = 0
+        const likeCount = document.querySelectorAll('.media-item-like')
+        likeCount.forEach((e) => {
+            totalLikes += Number(e.innerText)
+        })
+        console.log(totalLikes)
+        const likesToDisplay = document.createElement('div')
+        likesToDisplay.classList.add('likes-info')
+
+        const likeIcon = document.createElement("i")
+        likeIcon.classList.add("bi")
+        likeIcon.classList.add("bi-heart-fill")
+
+        const numberOfLikes = document.createElement('p')
+        numberOfLikes.textContent = `${totalLikes}`
+
+        likesToDisplay.appendChild(numberOfLikes)
+        likesToDisplay.appendChild(likeIcon)
+
+        // générer le prix
         const priceDetail = document.createElement("p")
         priceDetail.textContent = `${price}€/jour`
 
-        return(priceDetail)
+        const container = document.createElement('div')
+        container.classList.add('info-container')
+        container.appendChild(likesToDisplay)
+        container.appendChild(priceDetail)
+
+        return(container)
     }
 
     return {name, portrait, country, city, tagline, price, getUserHeader, getAside}
