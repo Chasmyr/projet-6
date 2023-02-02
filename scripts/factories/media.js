@@ -37,6 +37,9 @@ function mediaFactory(media) {
         const imageLink = document.createElement("a")
         imageLink.href = "#"
         imageLink.ariaLabel = "Lilac breasted roller, closeup view"
+        imageLink.addEventListener('click', () => {
+            openLightBox(media)
+        })
         
         if(video != undefined) {
 

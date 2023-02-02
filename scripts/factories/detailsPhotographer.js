@@ -39,6 +39,15 @@ function detailPhotographerFactory(data) {
         photographerSection.appendChild(div)
         imgContainer.appendChild(img)
         photographerSection.appendChild(imgContainer)
+
+        //ajouter également les infos a la modales
+        const modalTitle = document.querySelector(".modal-title")
+        const titleReplace = document.createElement("h2")
+        titleReplace.textContent = `Contactez-moi ${name}`
+        const modalLabel = document.querySelector(".modal")
+        modalLabel.setAttribute("aria-label", `Contact me ${name}`)
+
+        modalTitle.appendChild(titleReplace)
     }
 
     function getAside() {

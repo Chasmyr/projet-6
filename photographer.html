@@ -8,6 +8,47 @@
     <title>Fisheye - photographe </title>
   </head>
   <body>
+    <div id="contact_modal" role="dialog" aria-describedby="contactModal" aria-modal="true">
+			<div class="modal">
+				<header class="modal-header">
+          <div class="modal-title">
+
+          </div>
+          <a href="#" class="btn-close-modal" onclick="closeModal()" aria-label="Close Contact Form">
+            <img src="assets/icons/close.svg" />
+          </a>
+        </header>
+				<form id="contact_form" aria-label="formulaire de contact">
+					<div>
+						<label>Prénom</label>
+						<input id="form_name" aria-label="First Name"/>
+					</div>
+          <div>
+						<label>Nom</label>
+						<input id="form_lastName" aria-label="Last Name"/>
+					</div>
+          <div>
+						<label>Email</label>
+						<input id="form_email" aria-label="Email" />
+					</div>
+          <div>
+						<label>Message</label>
+						<input class="modal-input-textarea" id="form_message" aria-label="Your Message" />
+					</div>
+          <button class="contact_button" type="submit" aria-label="Send">Envoyer</button>
+				</form>
+			</div>
+		</div>
+    <div id="lightbox_bg">
+      <div class="lightbox" aria-label="image closeup view">
+          <div class="lightbox-slide">
+
+          </div>
+          <div class="lightbox-info">
+
+          </div>
+      </div>
+    </div>
     <header>
       <a href="/" aria-label="link to home page" class="header-link">
         <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" role="Image Link"/>
@@ -25,24 +66,10 @@
       <aside class="info-collection">
       </aside>
     </main>
-    <div id="contact_modal">
-			<div class="modal">
-				<header>
-          <h2>Contactez-moi</h2>
-          <img src="assets/icons/close.svg" onclick="closeModal()" />
-        </header>
-				<form>
-					<div>
-						<label>Prénom</label>
-						<input />
-					</div>
-          <button class="contact_button">Envoyer</button>
-				</form>
-			</div>
-		</div>
     <script src="./scripts/factories/media.js"></script>
     <script src="./scripts/factories/detailsPhotographer.js"></script>
     <script src="/scripts/pages/photographer.js"></script>
     <script src="/scripts/utils/contactForm.js"></script>
+    <script src="./scripts/utils/lightbox.js"></script>
   </body>
 </html>

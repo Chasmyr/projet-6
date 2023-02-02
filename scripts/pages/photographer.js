@@ -1,4 +1,5 @@
 const dataURL = '../../data/photographers.json'
+let mediasData = null
 
 // récupérer l'id présent dans l'url
 const params = (new URL(document.location)).searchParams
@@ -41,8 +42,7 @@ async function getMediaAndPhotographer() {
 }
 
 async function displayData(photographer, medias) {
-    console.log(photographer)
-    console.log(medias)
+    mediasData = medias
     
     //afficher le header 
     const photographerModel = detailPhotographerFactory(photographer)
