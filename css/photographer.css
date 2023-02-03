@@ -150,6 +150,7 @@ form input {
     font-size: 24px;
     display: flex;
     justify-content: space-evenly;
+    flex-direction: row-reverse;
 }
 .likes-info {
     display: flex;

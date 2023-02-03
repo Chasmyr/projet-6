@@ -52,13 +52,25 @@ function detailPhotographerFactory(data) {
 
     //générer l'encart pour le prix et les likes
     function getAside() {
+        // générer le prix
+        const priceDetail = document.createElement("p")
+        priceDetail.textContent = `${price}€/jour`
+
+        // générer le container 
+        const container = document.createElement('div')
+        container.classList.add('info-container')
+        container.appendChild(priceDetail)
+
+        return(container)
+    }
+
+    function getLike() {
         //générer les like
         let totalLikes = 0
         const likeCount = document.querySelectorAll('.media-item-like')
         likeCount.forEach((e) => {
             totalLikes += Number(e.innerText)
         })
-        console.log(totalLikes)
         const likesToDisplay = document.createElement('div')
         likesToDisplay.classList.add('likes-info')
 
@@ -67,22 +79,14 @@ function detailPhotographerFactory(data) {
         likeIcon.classList.add("bi-heart-fill")
 
         const numberOfLikes = document.createElement('p')
+        numberOfLikes.classList.add('total-likes')
         numberOfLikes.textContent = `${totalLikes}`
 
         likesToDisplay.appendChild(numberOfLikes)
         likesToDisplay.appendChild(likeIcon)
 
-        // générer le prix
-        const priceDetail = document.createElement("p")
-        priceDetail.textContent = `${price}€/jour`
-
-        const container = document.createElement('div')
-        container.classList.add('info-container')
-        container.appendChild(likesToDisplay)
-        container.appendChild(priceDetail)
-
-        return(container)
+        return(likesToDisplay)
     }
 
-    return {name, portrait, country, city, tagline, price, getUserHeader, getAside}
+    return {name, portrait, country, city, tagline, price, getUserHeader, getAside, getLike}
 }

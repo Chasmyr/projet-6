@@ -43,14 +43,13 @@ async function getMediaAndPhotographer() {
 
 async function displayData(photographer, medias) {
     mediasData = medias
-    
-    //afficher le header 
     const photographerModel = detailPhotographerFactory(photographer)
+
+    //afficher le header 
     const header = photographerModel.getUserHeader()
 
     //afficher la collection de media
     const mediaContainer = document.querySelector(".media-collection")
-    
     medias.forEach((media) => {
         const mediaCollectionModel = mediaFactory(media)
         const mediaDisplayed = mediaCollectionModel.getUserMediaCollection()
@@ -60,6 +59,8 @@ async function displayData(photographer, medias) {
     //afficher le petit encart
     const encart = document.querySelector('.info-collection')
     const priceDetail = photographerModel.getAside()
+    const likeDetail = photographerModel.getLike()
+    priceDetail.appendChild(likeDetail)
     encart.appendChild(priceDetail)
 };
 

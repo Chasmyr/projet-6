@@ -16,6 +16,7 @@ function mediaFactory(media) {
         like.textContent = likes
         like.classList.add("media-item-like")
 
+        // permettre de like les medias
         const likeIcon = document.createElement("i")
         likeIcon.classList.add("bi")
         likeIcon.classList.add("bi-heart-fill")
@@ -24,7 +25,9 @@ function mediaFactory(media) {
             if(!likeIcon.classList.contains('liked')) {
                 likeIcon.classList.add('liked')
                 like.textContent = likes + 1
-                console.log('like !')
+                //actualisr le total
+                const likesToUpdate = document.querySelector('.total-likes')
+                likesToUpdate.innerText = `${Number(likesToUpdate.innerText) + 1}`
             }
         })
 
@@ -50,6 +53,7 @@ function mediaFactory(media) {
             openLightBox(media)
         })
         
+        // si l'objet a une propriété video
         if(video != undefined) {
 
             let url = `/assets/images/${video}`
@@ -63,9 +67,8 @@ function mediaFactory(media) {
 
             imageLink.appendChild(mediaToDisplay)
             article.appendChild(imageLink)
-
+            // si il n'en a pas
         } else {
-
             let url = `/assets/images/${image}`
             const mediaToDisplay = document.createElement("img")
             mediaToDisplay.setAttribute("src", url)
