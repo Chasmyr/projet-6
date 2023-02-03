@@ -9,13 +9,13 @@
   </head>
   <body>
     <div id="contact_modal" role="dialog" aria-describedby="contactModal" aria-modal="true" aria-hidden="true">
-			<div class="modal">
+			<div class="modal" id="contactModal">
 				<header class="modal-header">
           <div class="modal-title">
 
           </div>
           <a href="#" class="btn-close-modal" onclick="closeModal()" aria-label="Close Contact Form">
-            <img src="assets/icons/close.svg" />
+            <img src="assets/icons/close.svg" alt="close button"/>
           </a>
         </header>
 				<form id="contact_form" aria-label="formulaire de contact">
@@ -42,14 +42,14 @@
     <div id="lightbox_bg" role="dialog">
       <div class="lightbox" aria-label="image closeup view">
           <a href="#" class="btn-close-lightbox" aria-label="Close dialog" role="button">
-            <img src="assets/icons/closeSlider.svg" />
+            <img src="assets/icons/closeSlider.svg" alt="close button"/>
           </a>
           <div class="lightbox-slide">
             <a href="#" class="slider-prev-option" aria-label="Previous image">
-              <img src="assets/icons/prev.svg" />
+              <img src="assets/icons/prev.svg" alt="previous slide button"/>
             </a>
             <a href="#" class="slider-next-option" aria-label="Next image">
-              <img src="assets/icons/next.svg" />
+              <img src="assets/icons/next.svg" alt="next slide button"/>
             </a>
           </div>
           <div class="lightbox-info">
@@ -59,18 +59,28 @@
     </div>
     <header>
       <a href="/" aria-label="link to home page" class="header-link">
-        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" role="Image Link"/>
+        <img src="assets/images/logo.png" class="logo" alt="Fisheye Home page" role="link"/>
       </a>
     </header>
     <main id="main" class="main-photographer">
-      <div class="photograph-header">
+      <section class="photograph-header">
         <div class="centered">
           <button class="contact_button" onclick="displayModal()" aria-label="Contact Me">Contactez-moi</button>
         </div>
-      </div>
-      <div class="test">
-        <a href="#">test</a>
-      </div>
+      </section>
+      <section class="option">
+        <label class="select-label">Trier par</label>
+        <ul class="filter-menu">
+          <li>
+            <button type="button" role="button" aria-haspopup="listbox" id="dropdown-filter">Filtre<span class="arrow"></span></button>
+            <ul class="dropdown">
+              <li><a href="#" class="like-option">Popularité</a></li>
+              <li"><a href="#" class="date-option">Date</a></li>
+              <li><a href="#" class="title-option">Titre</a></li>
+            </ul>
+          </li>
+        </ul>
+      </section>
       <section class="media-collection"> 
 
       </section>

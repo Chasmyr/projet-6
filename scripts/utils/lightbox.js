@@ -50,11 +50,9 @@ function openLightBox(media){
 }
 
 function closeLightbox(){
+    lightboxContainer.style.display = "none"
     const imageToRemove = document.querySelector('.slide-image')
     imageToRemove.remove()
-    const infoToRemove = document.querySelector('.lightbox-info')
-    infoToRemove.remove()
-    lightboxContainer.style.display = "none"
 }
 
 function nextSlide(){

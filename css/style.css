@@ -1,4 +1,5 @@
 @import url("photographer.css");
+@import url("dropdown.css");
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css");
 
 body {
@@ -163,9 +164,6 @@ h1 {
 .media-item-like {
     font-weight: 500;
     margin-right: 5px;
-    margin-top: 10px;
-}
-.media-title {
     margin-top: 10px;
 }
 .like-container {

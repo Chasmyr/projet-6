@@ -20,19 +20,24 @@ function mediaFactory(media) {
         const likeIcon = document.createElement("i")
         likeIcon.classList.add("bi")
         likeIcon.classList.add("bi-heart-fill")
-        likeIcon.addEventListener('click', (e) => {
-            e.preventDefault()
-            if(!likeIcon.classList.contains('liked')) {
-                likeIcon.classList.add('liked')
-                like.textContent = likes + 1
-                //actualisr le total
-                const likesToUpdate = document.querySelector('.total-likes')
-                likesToUpdate.innerText = `${Number(likesToUpdate.innerText) + 1}`
-            }
-        })
 
         const likeAction = document.createElement("a")
         likeAction.href="#"
+
+        events.forEach(ev => {
+            likeAction.addEventListener(ev, (e) => {
+                e.preventDefault()
+                if(e.type==="click" || e.keyCode===13) {
+                    if(!likeIcon.classList.contains('liked')) {
+                        likeIcon.classList.add('liked')
+                        like.textContent = likes + 1
+                        //actualisr le total
+                        const likesToUpdate = document.querySelector('.total-likes')
+                        likesToUpdate.innerText = `${Number(likesToUpdate.innerText) + 1}`
+                    }
+                } 
+            })
+        })
 
         likeAction.appendChild(likeIcon)
 

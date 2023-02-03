@@ -164,3 +164,20 @@ form input {
     color: black;
     margin-bottom: 5px;
 }
+.media-title {
+    margin-top: 10px;
+    max-width: 280px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.option {
+    margin: 20px 0 0 100px;
+}
+
+.select-label {
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 20px;
+}

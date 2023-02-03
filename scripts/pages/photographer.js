@@ -1,5 +1,6 @@
 const dataURL = '../../data/photographers.json'
 let mediasData = null
+const events = ['click', 'keypress']
 
 // récupérer l'id présent dans l'url
 const params = (new URL(document.location)).searchParams
